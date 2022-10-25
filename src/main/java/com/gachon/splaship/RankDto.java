@@ -6,10 +6,10 @@ import lombok.Data;
 public class RankDto {
 
     String userName;
-    int rank;
+    int score;
 
-    public RankDto(String userName, int rank) {
+    public RankDto(String userName, int score) {
         this.userName = userName;
-        this.rank = rank;
+        this.score = score;
     }
 }
