@@ -19,4 +19,14 @@ public class RankController {
     public String hello() {
         return "health check";
     }
+
+    @GetMapping(value = "/rank")
+    public List<RankDto> rank() {
+        return rankService.getRankList();
+    }
+
+    @GetMapping(value = "/new-score")
+    public Boolean newScore(@RequestParam(value="name") String name, @RequestParam(value="score") Integer score) {
+        return rankService.calculateNewRank(new RankDto(name, score));
+    }
 }
